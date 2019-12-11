@@ -3,13 +3,54 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Photography Website">
+    <meta name="keywords" content="photography, service, photo, portrait, landscape, pets, travel">
+    <meta name="author" content="Annie Gao">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cities</title>
     <link rel="stylesheet" href="css/nav.css" type="text/css">
+    <style>
+        h1#msg {
+            position: absolute;
+        }
+
+        table {
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script type="text/javascript">
+        let p = 600;
+        let i = 0;
+        const msgList = [
+            "New York",
+            "Tokyo",
+            "Shanghai"
+        ];
+
+        function doScroll() {
+            let x = document.getElementById("msg");
+            x.innerHTML = msgList[i];
+            x.style.left = p + "px";
+            if (p > 1000) {
+                p = 600;
+                i++;
+                if (i == msgList.length) {
+                    i = 0;
+                }
+            }
+            else {
+                p = p + 1;
+            }
+            setTimeout("doScroll()", 8);
+        }
+
+    </script>
 </head>
 
-<body>
+<body onload="doScroll()">
     <h1><a id="logo" href="index.htm">S T U D I O. G A O</a></h1>
     <nav>
         <a class="navi" href="index.htm">HOME</a>
@@ -22,7 +63,24 @@
         <a class="navi" href="sitemap.htm">SITE MAP</a>
         <a class="navi" href="contact.htm">CONTACT</a>
     </nav>
-    <h1>Cities</h1>
+    <h1 id="msg"></h1>
 </body>
+<div>
+    <table>
+        <tr>
+            <td><img src="images/city/city_01.jpg" alt="city_01" height="400px"></td>
+            <td rowspan="2"><img src="images/city/city_03.jpg" alt="city_03" height="810px"></td>
+        </tr>
+        <tr>
+            <td><img src="images/city/city_02.jpg" alt="city_02" height="400px"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="images/city/city_05.jpg" alt="city_05" height="707px"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="images/city/city_10.jpg" alt="city_10" height="840px"></td>
+        </tr>
+    </table>
+</div>
 
 </html>

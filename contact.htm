@@ -3,14 +3,81 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Photography Website">
+    <meta name="keywords" content="photography, service, photo, portrait, landscape, pets, travel">
+    <meta name="author" content="Annie Gao">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact StudioGao</title>
     <link rel="stylesheet" href="css/nav.css" type="text/css">
+    <style>
+        button {
+            background-color: #c9ada7;
+            color: white;
+            height: 40px;
+            width: 100px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: medium;
+            border: none;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .h {
+            font-style: italic;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #mesg {
+            color: white;
+            background-color: #c9ada7;
+            padding: 15px 0;
+            text-align: center;
+        }
+        input {
+            background-color: whitesmoke;
+            border-style: none;
+            border: #c9ada7 2px solid;
+        }
+        textarea {
+            background-color: whitesmoke;
+            border-style: none;
+            border: #c9ada7 2px solid;
+        }
+    </style>
+    <script>
+        function showAlert() {
+            let myForm = document.getElementById("form1");
+            let m = document.getElementById("mesg");
+            let f = myForm.fname.value;
+            let l = myForm.lname.value;
+            let e = myForm.email.value;
+            let w = myForm.message.value;
+
+            if (f == "" || l == "" || e == "" || w == "") {
+                alert("Please fill in all the blanks!")
+            }
+
+            else {
+                m.innerHTML = "Thank you for your feedback!"
+            }
+
+            return false;
+        }
+    </script>
 </head>
 
 <body>
-    <h1>Contact <a id="logo" href="index.htm">S T U D I O. G A O</a></h1>
+    <h1><a id="logo" href="index.htm">S T U D I O. G A O</a></h1>
     <nav>
         <a class="navi" href="index.htm">HOME</a>
         <a class="navi" href="about.htm">ABOUT US</a>
@@ -22,28 +89,19 @@
         <a class="navi" href="sitemap.htm">SITE MAP</a>
         <a class="navi" href="contact.htm">CONTACT</a>
     </nav>
-    <h3>"We are here 24/7 to answer your questions and handle any queries you have. We look forward to hearing from
+    <h3 class="h">"We are here 24/7 to answer your questions and handle any queries you have. We look forward to hearing
+        from
         you."</h3>
-    <h3>Email: info@studiogao.com</h3>
-    <h3>Address: Campus Box #752, 231 Forest St. Babson Park, MA 02457</h3>
-    <form action="mailto:info@studiogao.com">
-        <table>
-            <tr>
-                <th>Frist Name <input type="text" name="Fname"></th>
-                <th rowspan="4">Your Message: <br> <textarea name="message" id="message" cols="60" rows="10"></textarea>
-                </th>
-            </tr>
-            <tr>
-                <th>Last Name <input type="text" name="Lname"></th>
-            </tr>
-            <tr>
-                <th>Email <input type="email" name="emil" id="email"></th>
-            </tr>
-            <tr>
-                <th> Phone <input type="text" name="phone#"></th>
-            </tr>
-        </table>
-        <button type="submit" name="submit" value="submit">Submit</button>
+    <h3 class="h">Email: info@studiogao.com | Address: Campus Box #752, 231 Forest St. Babson Park, MA 02457</h3>
+    <form id="form1" action="">
+        <h3 id="mesg">Would love to hear your feedback!</h3>
+        <h3>First Name: <input type="text" name="fname"></h3>
+        <h3>Last Name: <input type="text" name="lname"></h3>
+        <h3>Your Email: <input type="email" name="email" id="email"></h3>
+        <h3>Your Message: </h3><textarea name="message" id="message" cols="60" rows="10"></textarea>
+        <br>
+        <button onclick="return showAlert()" type="submit" name="submit" value="submit">Submit</button>
+        <button type="reset" name="clear">Clear</button>
 
 
     </form>

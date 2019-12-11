@@ -3,13 +3,63 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Photography Website">
+    <meta name="keywords" content="photography, service, photo, portrait, landscape, pets, travel">
+    <meta name="author" content="Annie Gao">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Landscapes</title>
     <link rel="stylesheet" href="css/nav.css" type="text/css">
+    <script>
+        const slides = [
+            "images/landscape/landscape_02.jpg",
+            "images/landscape/landscape_03.jpg",
+            "images/landscape/landscape_04.jpg",
+            "images/landscape/landscape_05.jpg",
+            "images/landscape/landscape_06.jpg",
+            "images/landscape/landscape_07.jpg",
+            "images/landscape/landscape_08.jpg",
+            "images/landscape/landscape_09.jpg",
+            "images/landscape/landscape_10.jpg",
+            "images/landscape/landscape_11.jpg",
+            "images/landscape/landscape_14.jpg",
+            "images/landscape/landscape_18.jpg",
+        ]
+        let i = 0;
+
+        const descriptionList = [
+            "El Capitan, Yosemite National Park, California",
+            "Lugu Lake, Yunnan",
+            "Lugu Lake, Yunnan",
+            "Lugu Lake, Yunnan",
+            "Lugu Lake, Yunnan",
+            "Pacific Beach, San Diego",
+            "Pacific Beach, San Diego",
+            "Pacific Beach, San Diego",
+            "The Palace Museum, Beijing",
+            "Temple of Heaven, Beijing",
+            "Jiuzhai Valley National Park, Sichuan",
+            "Senso-ji, Tokyo"
+
+        ]
+
+        function slideShow() {
+            let landscapeImage = document.getElementById("landscapeImage");
+            if (i == slides.length) {
+                i = 0;
+            }
+            landscapeImage.src = slides[i];
+            document.getElementById("description").innerHTML = descriptionList [i];
+            i = i + 1;
+ 
+            setTimeout("slideShow()", 3000);
+
+
+        }
+    </script>
 </head>
 
-<body>
+<body onload="slideShow()">
     <h1><a id="logo" href="index.htm">S T U D I O. G A O</a></h1>
     <nav>
         <a class="navi" href="index.htm">HOME</a>
@@ -23,6 +73,9 @@
         <a class="navi" href="contact.htm">CONTACT</a>
     </nav>
     <h1>Landscapes</h1>
+    <h3 id="description"></h3>
+        <img src="images/landscape/landscape_02.jpg" alt="Slide Show of Landscapes" title="Landscapes" height="600px"
+            id="landscapeImage"/>
 </body>
 
 </html>

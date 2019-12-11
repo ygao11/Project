@@ -3,10 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Photography Website">
+    <meta name="keywords" content="photography, service, photo, portrait, landscape, pets, travel">
+    <meta name="author" content="Annie Gao">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cute Creatures</title>
     <link rel="stylesheet" href="css/nav.css" type="text/css">
+    <script>
+        function enlargeImage(imageId) {
+            let i = document.getElementById(imageId);
+            let c = document.getElementById("line");
+            let w = i.width;
+            let h = i.height;
+            h = h * 1.5
+            w = w * 1.5;
+            i.style.width = w + "px";
+            i.style.height = h + "px";
+            c.style.color = "white";
+            c.style.backgroundColor = "#c9ada7";
+        }
+
+        function reduceImage(imageId) {
+            let i = document.getElementById(imageId);
+            let c = document.getElementById("line");
+            let w = i.width;
+            let h = i.height;
+            h = h / 1.5;
+            w = w / 1.5;
+            i.style.width = w + "px";
+            i.style.height = h + "px";
+            c.style.color = "black";
+            c.style.backgroundColor = "#f2e9e4";
+        }
+    </script>
 </head>
 
 <body>
@@ -22,7 +52,19 @@
         <a class="navi" href="sitemap.htm">SITE MAP</a>
         <a class="navi" href="contact.htm">CONTACT</a>
     </nav>
-    <h1>Cute Creatures</h1>
-</body>
+    <h1 id="line">Cute Creatures</h1>
 
+<img onmouseover="enlargeImage(this.id)" onmouseout="reduceImage(this.id)" id="pet4" src="images/pet/pet_04.jpg"
+    alt="pet_04" height="400px">
+<img onmouseover="enlargeImage(this.id)" onmouseout="reduceImage(this.id)" id="pet5" src="images/pet/pet_05.jpg"
+    alt="pet_05" height="400px">
+<img onmouseover="enlargeImage(this.id)" onmouseout="reduceImage(this.id)" id="pet8" src="images/pet/pet_08.jpg"
+    alt="pet_08" height="400px">
+<img onmouseover="enlargeImage(this.id)" onmouseout="reduceImage(this.id)" id="pet9" src="images/pet/pet_09.jpg"
+    alt="pet_09" height="400px">
+<img onmouseover="enlargeImage(this.id)" onmouseout="reduceImage(this.id)" id="pet2" src="images/pet/pet_02.jpg"
+    alt="pet_02" height="400px">
+<img onmouseover="enlargeImage(this.id)" onmouseout="reduceImage(this.id)" id="pet3" src="images/pet/pet_03.jpg"
+    alt="pet_03" height="400px">
+</body>
 </html>

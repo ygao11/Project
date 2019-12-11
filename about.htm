@@ -3,10 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Photography Website">
+    <meta name="keywords" content="photography, service, photo, portrait, landscape, pets, travel">
+    <meta name="author" content="Annie Gao">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>About StudioGao</title>
     <link rel="stylesheet" href="css/nav.css" type="text/css">
+    <script crossorigin="anonymous" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        h3 {
+            margin-right: 200px;
+            margin-left: 200px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#a").click(function () {
+                $("#a").css("color", "white")
+                $("#a").css("background-color","#c9ada7")
+            })
+        });
+    </script>
 </head>
 
 <body>
@@ -23,7 +42,14 @@
         <a class="navi" href="contact.htm">CONTACT</a>
     </nav>
     <h1>About StudioGao</h1>
-    <h3>StudioGao displays the best of Annie's photography work, who is also the founder of the business. Starting 2020, StudioGao's brand new travel photography service will reveal to the public, capturing the best moments for our clients during trips. Staty tuned...</h3>
+    <h3>StudioGao displays the best of Annie's photography work, who is also the founder of the business. Starting 2020,
+        StudioGao's brand new travel photography service will reveal to the public, capturing the best moments for our
+        clients during trips. Stay tuned...</h3>
+    <h3>Click to professionally connect with the founder on LinkedIn</h3>
+    <a href="https://www.linkedin.com/in/yinyinggao/" target="_blank"><img src="images/LinkedIn.png" alt="LinkedIn Logo"
+            height="50px"></a>
+    <h1 id="a">More to come in 2020! (try click on me)</h1>
+
 </body>
 
 </html>
